@@ -1,0 +1,12 @@
+os
+json
+time
+requests
+urllib
+webbrowser
+openai
+speech_recognition
+pyttsx3
+threading
+queue
+dotenv

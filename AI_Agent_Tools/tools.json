@@ -1,0 +1,115 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "get_current_track",
+            "description": "Get information about the track currently playing on the user's Spotify account",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "create_playlist",
+            "description": "Create a new Spotify playlist with the specified name",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "playlist_name": {
+                        "type": "string",
+                        "description": "The name for the new playlist"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Optional description for the playlist"
+                    },
+                    "public": {
+                        "type": "boolean",
+                        "description": "Whether the playlist should be public (True) or private (False). Default is False."
+                    }
+                },
+                "required": ["playlist_name"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "add_track_to_playlist",
+            "description": "Add the currently playing track to a playlist",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "playlist_id": {
+                        "type": "string",
+                        "description": "The ID of the playlist to add the track to"
+                    },
+                    "track_uri": {
+                        "type": "string",
+                        "description": "The Spotify URI of the track to add"
+                    },
+                    "position": {
+                        "type": "integer",
+                        "description": "Optional position to insert the track (zero-based index)"
+                    }
+                },
+                "required": ["playlist_id", "track_uri"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "find_playlist_by_name",
+            "description": "Find a playlist by name in the user's library",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "playlist_name": {
+                        "type": "string",
+                        "description": "The name of the playlist to search for"
+                    }
+                },
+                "required": ["playlist_name"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_user_playlists",
+            "description": "Get a list of the user's playlists",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "limit": {
+                        "type": "integer",
+                        "description": "Maximum number of playlists to return (max 50)"
+                    }
+                },
+                "required": []
+            }
+        }
+    },
+    {
+    "type": "function",
+    "function": {
+        "name": "add_current_track_to_playlist",
+        "description": "Add the currently playing track to a playlist by name",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "playlist_name": {
+                    "type": "string",
+                    "description": "The name of the playlist to add the track to"
+                }
+            },
+            "required": ["playlist_name"]
+        }
+    }
+}
+]
